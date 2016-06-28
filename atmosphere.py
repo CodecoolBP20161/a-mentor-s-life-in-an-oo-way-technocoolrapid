@@ -1,3 +1,6 @@
+from event import Event
+
+
 class Athomosphere(Event):
 
     def __init__(self, moral_change, moral_message, _id, *args, **kwargs):
