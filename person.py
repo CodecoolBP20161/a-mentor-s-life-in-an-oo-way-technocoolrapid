@@ -21,4 +21,4 @@ class Person:
             self.skill_level += args[0]
         else:
             self.morale += args[0]
-        print(args[1] + args[0])
+        print(args[1] + str(args[0]))
