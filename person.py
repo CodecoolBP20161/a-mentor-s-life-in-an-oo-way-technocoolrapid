@@ -4,9 +4,9 @@ import random
 class Person:
 
     def __init__(self):
-        fn = random.choice["Bela", "David", "Gergo", "Reka", "Lilla", "Barbara"]
+        fn = random.choice(["Bela", "David", "Gergo", "Reka", "Lilla", "Barbara"])
         self.first_name = fn
-        self.last_name = random.choice["Kocsis", "Kovacs", "Feher", "Nyiro", "Polonkai"]
+        self.last_name = random.choice(["Kocsis", "Kovacs", "Feher", "Nyiro", "Polonkai"])
         self.year_of_birth = random.randint(1985, 1998)
         self.gender = "Male" if fn in ["Bela", "David", "Gergo"] else "Female"
         self.energy_level = random.randint(50, 70)
