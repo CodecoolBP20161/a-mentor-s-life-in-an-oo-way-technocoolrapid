@@ -66,3 +66,31 @@ Gives back a student with the same full name as the argument from ```students```
 
 #### Return value
 ```Mentor``` object
+
+### ```appoint_mentor```
+Select random mentor from the mentors list
+and call for its appoint_mentor method
+
+#### Arguments
+None
+
+#### Return value
+None
+
+### ```import_from_csv```
+read from csv file
+
+#### Arguments
+file_name
+
+#### Return value
+list of lists
+
+### ```export_to_csv```
+write to file
+
+#### Arguments
+file_name
+
+#### Return value
+list of lists

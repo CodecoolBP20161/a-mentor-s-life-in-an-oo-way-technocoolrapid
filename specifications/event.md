@@ -8,15 +8,15 @@ None
 
 ## Attributes
 
-* ```name```
-  * data type: string
-  * description: stores the name of the activity/occurance taking place
 * ```energy_level```
   * data type: integer
-  * description: stores the energy level related to the activity/occurance (can be + or -)
+  * description: stores the energy level related to the activity/occurrence (can be + or -)
 * ```description```
-  * data type: list of strings
-  * description: stores the description for all events in the story
+  * data type: string
+  * description: stores the description for the event
+* ```event_id``` class attribute
+  * data type: string
+  * description: specifies that the energy_level value has to be changed
 
 ## Instance methods
 
@@ -29,12 +29,11 @@ All of the arguments of the class itself.
 #### Return value
 None
 
-### ```have_coffee```
-Checks energy_level of a person-object. If energy_level is below a certain level, person-object's
-energy_level will be increased by an integer value.
+### ```process_event```
+Returns the energy_level, description and event_id of the event.
 
 #### Arguments
-A variable called coffee_boost, with default value of integer.
+None
 
 #### Return value
-None
+List: energy_level, description, event_id

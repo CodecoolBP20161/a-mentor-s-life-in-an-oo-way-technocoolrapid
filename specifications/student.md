@@ -29,9 +29,11 @@ None
 
 ### ```understanding_project```
 Sets a value (Boolean) for the attribute understood_project.
+Update morale of the students depend he/she understands the project
+Printing the changes
 
 #### Arguments
-None
+variable called understood (Boolean)
 
 #### Return value
 None

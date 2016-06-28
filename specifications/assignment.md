@@ -63,4 +63,4 @@ formatted string of the student's name, the name of the assignment and the grade
   * description: holds the name of the student in question
 
 #### Return value
-formatted string whether the Student understood the assignment
+Boolean value(True/False)

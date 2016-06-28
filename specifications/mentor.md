@@ -25,6 +25,7 @@ None
 
 ### ```appoint_mentor```
 Sets a value (Boolean) for the attribute responsible.
+Printing the changes
 
 #### Arguments
 None
