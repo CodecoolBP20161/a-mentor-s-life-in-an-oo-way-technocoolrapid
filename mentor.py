@@ -1,9 +1,11 @@
 from person import Person
 import random
 
+
 class Mentor(Person):
-    def __init__(self, *args, **kwargs):
+    def __init__(self, nick_name, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.nick_name = nick_name
         self.responsible = False
 
     def appoint_mentor(self):
