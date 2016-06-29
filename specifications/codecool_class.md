@@ -83,17 +83,6 @@ None
 #### Return value
 None
 
-### ```import_from_csv```
-read from csv file
-
-#### Arguments
-* ```file_name```
-  * data_type: string
-  * description: csv database file name
-
-
-#### Return value
-list of lists
 
 ### ```export_to_csv```
 write to file

@@ -8,6 +8,10 @@ Person
 
 ## Attributes
 
+* ```nick_name```
+  * data type: String
+  * description: stores a mentor nick name
+
 * ```responsible```
   * data type: Boolean
   * description: stores whether a mentor is responsible for the week's project or not
