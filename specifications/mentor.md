@@ -18,7 +18,7 @@ Person
 The constructor of the object.
 
 #### Arguments
-All of the arguments of the class itself and of the parent class.
+All of the arguments of the class itself and of the parent class except responsible.
 
 #### Return value
 None

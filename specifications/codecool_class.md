@@ -20,6 +20,12 @@ None
 * ```students```
   * data type: list (containing Student objects)
   * description: stores the students of the class
+* ```stat_morning```
+  * data type: integer
+  * description: stores the morning's energy, moral and skill level of the class
+* ```stat_evening```
+  * data type: integer
+  * description: stores the evening's energy, moral and skill level of the class  
 
 ## Class methods
 
@@ -81,7 +87,10 @@ None
 read from csv file
 
 #### Arguments
-file_name
+* ```file_name```
+  * data_type: string
+  * description: csv database file name
+
 
 #### Return value
 list of lists
@@ -90,7 +99,46 @@ list of lists
 write to file
 
 #### Arguments
-file_name
+* ```file_name```
+  * data_type: string
+  * description: csv database file name
+
 
 #### Return value
 list of lists
+
+### ```sum_stats```
+Summing the class moral, energy level and skill level before and after school
+
+#### Arguments
+* ```stat_status```
+  * data_type: string
+  * description: where to store the statistic data
+
+
+#### Return value
+integer
+
+### ```report_day```
+Prints the state changes between start and end of the school.
+
+#### Arguments
+* ```stat_morning```
+  * data_type: integer
+  * description: statistic before the school
+
+* ```stat_evening```
+  * data_type: integer
+  * description: statistic after the school
+
+#### Return value
+None
+
+### ```attendance_check```
+Checks the students if they are late and modifies the mentor's morale
+
+#### Arguments
+None
+
+#### Return value
+list of integer, string, string

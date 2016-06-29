@@ -51,7 +51,7 @@ Gives back a pretty printed version of the ```student's```name, the assignment h
 
 
 #### Return value
-formatted string of the student's name, the name of the assignment and the grade
+list of integer, string, string
 
 
 

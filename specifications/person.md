@@ -20,24 +20,6 @@ first_name: string, last_name: string, year_of_birth: integer, gender: string
 * ```gender```
   * data type: string
   * description: stores the persons genre: (female, male, notsure)
-* ```max_energy_level```
-    * data type: integer
-    * description: stores the person's maximum  energy level
-* ```min_energy_level```
-    * data type: integer
-    * description: stores the person's minimum energy level
-* ```max_skill_level```
-     * data type: integer
-     * description: stores the person's maximum skill level
-* ```min_skill_level```
-    * data type: integer
-    * description: stores the person's minimum skill level
-* ```max_moral_level```
-    * data type: integer
-    * description: stores the person's maximum moral level
-* ```min_moral_level```
-    * data type: integer
-    * description: stores the person's minimum moral level
 * ```energy_level```
      * data type: integer
      * description: stores the person's actual energy level
@@ -50,6 +32,15 @@ first_name: string, last_name: string, year_of_birth: integer, gender: string
 * ```hungry```
     * data type: bool
     * description: stores the person's hungry state
+* ```last_name_list```
+    * data type: list
+    * description: stores the person's last names
+* ```female_name_list```
+    * data type: list
+    * description: stores the female's name
+* ```male_name_list```
+    * data type: list
+    * description: stores the male's name
 
 ## Class methods
 
