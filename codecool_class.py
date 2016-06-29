@@ -9,13 +9,15 @@ class CodecoolClass:
         self.year = year
         self.mentors = mentors
         self.students = students
+        self.stat_morning = None
+        self.stat_evening = None
 
     @classmethod
     def generate_local(cls):
-        students = [Student() for _ in range(5)]
-        mentors = [Mentor() for _ in range(4)]
-        year = random.choice([2015, 2016])
-        location = random.choice(["Miskolc", "Budapest", "Krakow"])
+        students = Student.create_by_csv()
+        mentors = Mentor.create_by_csv()
+        year = 2016
+        location = "Budapest"
         local_class = CodecoolClass(location, year, students, mentors)
         return local_class
 
@@ -33,14 +35,46 @@ class CodecoolClass:
         appointed_mentor = random.choice(self.mentors)
         appointed_mentor.appoint_mentor()
 
+    def export_to_csv(self):  # append vagy write a jobb megoldás
+        with open("data/mentors.csv", "a") as wm, open("data/students.csv", "a") as ws:
 
-#    def import_from_csv(self, file_name):
-#        file_list = list(csv.reader(open(file_name), delimiter=','))
-#        if file_name.split(".")[0] = "mentors":
-#            mentors = [Mentor() for _ in file_list]
-#            return mentors
-#        elif file_name.split(".")[0] = "students":
-#            students = [Student() for _ in file_list]
-#            return students
-#
-#    def export_to_csv(self, file_name)
+            pass
+
+    def sum_stats(self, stat_status):  # kérdés hogyan írja a stat_evening stat_morning ot???
+
+        energy = None
+        skill = None
+        moral = None
+        overall = None
+
+        for mentor in self.mentors:
+            energy += mentor.energy_level
+            skill += mentor.skill_level
+            moral += mentor.moral_level
+        for student in self.students:
+            energy += student.energy_level
+            skill += student.skill_level
+            moral += student.moral_level
+
+        overall = energy + skill + moral
+        if stat_status == "morning":
+            self.stat_morning = overall
+        if stat_status == "evening":
+            self.stat_evening = overall
+
+        print("""Codecool class state at the {0} is : \n
+              energy level:{1}
+              skill level:{2}
+              moral level:{3}
+              overall: {4}""".format(stat_status, energy, skill, moral, overall))
+        return overall
+
+    def report_day(self, stat_morning, stat_evening):
+        changes = stat_morning - stat_evening
+        if changes > 0:
+            print("Codecool overall status has changed by the day {0} points.Let's go to terrace opening party!!!".format(changes))
+        else:
+            print("Codecool overall status has changed by the day {0} points.Let's do more harder. 'Gyerünk rakjuk meg'".format(changes))
+
+    def attendance_check(self):
+        pass
