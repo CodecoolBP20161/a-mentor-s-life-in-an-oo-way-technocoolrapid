@@ -36,3 +36,14 @@ None
 
 #### Return value
 None
+
+### ```create_by_csv```
+Reads the data from the given database and fill it to a list
+
+#### Arguments
+* ```filename```
+  * data type: String
+  * description: stores a path and name of the database
+
+#### Return value
+list of Mentors

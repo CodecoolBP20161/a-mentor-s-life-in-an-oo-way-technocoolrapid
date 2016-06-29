@@ -67,3 +67,11 @@ Updates Person attributes and printing the changes
 
 #### Return value
 None
+
+### ```get_full_name```
+
+Person's full name by first and last name
+#### Arguments
+
+#### Return value
+string
