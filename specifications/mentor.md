@@ -16,6 +16,19 @@ Person
   * data type: Boolean
   * description: stores whether a mentor is responsible for the week's project or not
 
+## Class methods
+
+### ```create_by_csv```
+Reads the data from the given database and fill it to a list
+
+#### Arguments
+* ```filename```
+  * data type: String
+  * description: stores a path and name of the database
+
+#### Return value
+list of Mentors
+
 ## Instance methods
 
 ### ```__init__```
@@ -36,14 +49,3 @@ None
 
 #### Return value
 None
-
-### ```create_by_csv```
-Reads the data from the given database and fill it to a list
-
-#### Arguments
-* ```filename```
-  * data type: String
-  * description: stores a path and name of the database
-
-#### Return value
-list of Mentors
