@@ -3,12 +3,11 @@ import random
 
 class Person:
 
-    def __init__(self):
-        fn = random.choice(["Bela", "David", "Gergo", "Reka", "Lilla", "Barbara"])
+    def __init__(self, fn, ln, dob, gender):
         self.first_name = fn
-        self.last_name = random.choice(["Kocsis", "Kovacs", "Feher", "Nyiro", "Polonkai"])
-        self.year_of_birth = random.randint(1985, 1998)
-        self.gender = "Male" if fn in ["Bela", "David", "Gergo"] else "Female"
+        self.last_name = ln
+        self.year_of_birth = dob
+        self.gender = gender
         self.energy_level = random.randint(50, 70)
         self.moral_level = random.randint(20, 30)
         self.skill_level = random.randint(5, 10)
@@ -22,3 +21,7 @@ class Person:
         else:
             self.morale += args[0]
         print(args[1] + str(args[0]))
+
+    @property
+    def full_name(self):
+        return self.first_name + " " + self.last_name
