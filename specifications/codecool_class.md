@@ -83,19 +83,6 @@ None
 #### Return value
 None
 
-
-### ```export_to_csv```
-write to file
-
-#### Arguments
-* ```file_name```
-  * data_type: string
-  * description: csv database file name
-
-
-#### Return value
-list of lists
-
 ### ```sum_stats```
 Summing the class moral, energy level and skill level before and after school
 
