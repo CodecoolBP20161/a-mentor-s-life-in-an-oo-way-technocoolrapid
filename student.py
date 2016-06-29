@@ -1,9 +1,10 @@
 from person import Person
+import random
 
 
 class Student(Person):
-    def __init__(self, late, *args, **kwargs):
-        self.late = late
+    def __init__(self, *args, **kwargs):
+        self.late = random.choice([True, False])
         self.understood_project = False
         super().__init__(*args, **kwargs)
 
