@@ -24,6 +24,9 @@ None
 * ```student```
   * data type: containing Student object
   * description: stores the student who's working on this assignment
+* ```mentor```
+  * data type: containing mentor object
+  * description: stores the mentor who'll grade this assignment
 * ```questions```
  * data type: list of strings
  * description: stores questions about the assignment (for understanding)
@@ -51,7 +54,7 @@ Gives back a pretty printed version of the ```student's```name, the assignment h
 
 
 #### Return value
-list of integer, string, string
+formatted string of the student's name, the name of the assignment and the grade
 
 
 
