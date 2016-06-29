@@ -16,6 +16,19 @@ Person
   * description: stores whether a student understood the project or not
   * default value: False
 
+## Class methods
+
+### ```create_by_csv```
+Reads the data from the given database and fill it to a list
+
+#### Arguments
+* ```filename```
+  * data type: String
+  * description: stores a path and name of the database
+
+#### Return value
+list of Student
+
 ## Instance methods
 
 ### ```__init__```
