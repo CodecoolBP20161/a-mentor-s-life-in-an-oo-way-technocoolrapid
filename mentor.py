@@ -2,6 +2,7 @@ from person import Person
 import random
 import csv
 
+
 class Mentor(Person):
     def __init__(self, nick_name, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -29,4 +30,3 @@ class Mentor(Person):
             self.moral_level -= 2
             print("Ehh, one more thing to do...")
             print("The moral level of {0} {1} has decreased by 2.".format(self.first_name, self.last_name))
-
