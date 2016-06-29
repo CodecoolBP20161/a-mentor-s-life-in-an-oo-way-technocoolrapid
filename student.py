@@ -8,6 +8,16 @@ class Student(Person):
         self.understood_project = False
         super().__init__(*args, **kwargs)
 
+    @classmethod
+    def create_by_csv(cls, path):
+        student_objects = []
+        with open(path, "r") as f:
+            for student in f:
+                if student.strip() is not None:
+                    student = student.replace("\n", "")
+                    student_objects.append(Student(*student.split(",")))
+        return student_objects
+
     def understanding_project(self, understood):
         self.understood_project = understood
         if self.understood_project:
