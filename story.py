@@ -148,6 +148,7 @@ input("")
 # script private mentoring
 for stud in codecool_bp.students:
     if stud.understood_project is not True:
+        mentor = random.choice(codecool_bp.mentors)
         private_mentoring = Study(-2, "I learnt so much, it really worth the effort. Skill level: ",
                                   4, "\n{0} had a private mentoring session with {1}. Energy level: "
                                   .format(stud.full_name, mentor.nick_name))
