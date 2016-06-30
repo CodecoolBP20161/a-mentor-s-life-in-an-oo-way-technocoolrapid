@@ -19,7 +19,7 @@ class Person:
         elif args[2] == "skill_level":
             self.skill_level += args[0]
         else:
-            self.morale += args[0]
+            self.moral_level += args[0]
         print(args[1] + str(args[0]))
 
     @property

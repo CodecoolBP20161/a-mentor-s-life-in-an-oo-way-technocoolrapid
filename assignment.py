@@ -7,22 +7,23 @@ class Assignment:
     def __init__(self, name, student, is_active=False, mentor=None, grade=None):
         self.name = name
         self.student = student
-        self.difficulty = randint(5, 10)
+        self.difficulty = 10
         self.grade = grade
         self.mentor = mentor  # mentor who gives grade for the assignment
         self.is_active = is_active
         if is_active:
             self.questions = ["Soooo, what's the deadline?",
                               "How is it related to OOP?",
-                              "How many classes do we need to create?"
-                              "How old is Humen?"
+                              "How many classes do we need to create?",
+                              "How old is Humen?",
                               "Can we have a more difficult project?"
                               ]
+        else:
+            self.questions = []
 
     def get_grade(self):
         # based on the difficulty of the assignment and the skill level of the student, the assignment gets graded
         morale_of_mentor = 0
-
         if self.student.skill_level == self.difficulty:
             self.grade = 70
             morale_of_mentor += 2
@@ -36,7 +37,7 @@ class Assignment:
             morale_of_mentor = 5
             reaction = "Excellent assignment, keep on rocking! The morale level of mentor increased by 5"
         print("{0}'s assignment, {1} has been graded: {2}%".format(self.student.first_name, self.name, self.grade))
-        return [morale_of_mentor, reaction, "moral_level"]
+        return [morale_of_mentor, reaction]
 
         # return formatted string of the student's name, the name of the assignment and the grade
 

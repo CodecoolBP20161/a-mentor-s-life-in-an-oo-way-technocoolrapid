@@ -14,8 +14,13 @@ class CodecoolClass:
 
     @classmethod
     def generate_local(cls):
+<<<<<<< Updated upstream
         students = Student.create_by_csv("data/students.csv")
         mentors = Mentor.create_by_csv("data/mentors.csv")
+=======
+        students = Student.create_by_csv("./data/students.csv")
+        mentors = Mentor.create_by_csv("./data/mentors.csv")
+>>>>>>> Stashed changes
         year = 2016
         location = "Budapest"
         local_class = CodecoolClass(location, year, students, mentors)
@@ -71,7 +76,7 @@ class CodecoolClass:
 
     def report_day(self, stat_morning, stat_evening):
         changes = stat_morning - stat_evening
-        if changes > 0:
+        if changes < 0:
             print("Codecool overall status has changed by the day {0} points.Let's go to terrace opening party!!!".format(changes))
         else:
             print("Codecool overall status has changed by the day {0} points.Let's do more harder. 'Gyerünk rakjuk meg'".format(changes))
