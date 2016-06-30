@@ -144,7 +144,16 @@ codecool_bp.drink_coffee(40)
 input("")
 print("The mentors noticed that some students still need some extra help with understanding the material.")
 print("They invite those students for private mentoring. No student left behind!")
+input("")
 # script private mentoring
+for stud in codecool_bp.students:
+    if stud.understood_project is not True:
+        private_mentoring = Study(-2, "I learnt so much, it really worth the effort. Skill level: ",
+                                  4, "\n{0} had a private mentoring session with {1}. Energy level: "
+                                  .format(stud.full_name, mentor.nick_name))
+        stud.understood_project = True
+        stud.process(private_mentoring.process_event())
+        stud.process(private_mentoring.process_study())
 input("")
 print("The day is over, let's see how the situation changed since the morning.")
 
