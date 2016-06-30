@@ -46,6 +46,7 @@ class CodecoolClass:
         skill = 0
         moral = 0
         overall = 0
+        number_of_class = len(self.students) + len(self.mentors)
 
         for mentor in self.mentors:
             energy += mentor.energy_level
@@ -57,6 +58,10 @@ class CodecoolClass:
             moral += student.moral_level
 
         overall = energy + skill + moral
+        energy = energy//number_of_class
+        skill = skill//number_of_class
+        moral = moral//number_of_class
+
         if stat_status == "morning":
             self.stat_morning = overall
         if stat_status == "evening":
@@ -70,8 +75,8 @@ class CodecoolClass:
         return overall
 
     def report_day(self, stat_morning, stat_evening):
-        changes = stat_morning - stat_evening
-        if changes < 0:
+        changes =  stat_evening - stat_morning
+        if changes > 0:
             print("Codecool overall status has changed by the day {0} points.Let's go to terrace opening party!!!".format(changes))
         else:
             print("Codecool overall status has changed by the day {0} points.Let's do more harder. 'Gyerünk rakjuk meg'".format(changes))
