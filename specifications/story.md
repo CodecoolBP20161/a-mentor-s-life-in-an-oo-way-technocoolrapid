@@ -2,6 +2,20 @@
 
 This file should contain the description of your team's story to tell about a mentor's life @ Codecool.
 
+## Instance methods
+
+### ```slow_typing```
+Print the text and after the input to stop the flow
+
+#### Arguments
+* ```str```
+  * data type: string
+  * description: stores the text
+
+#### Return value
+None
+
+
 ## Events in a day
 
 * mentor discussion
