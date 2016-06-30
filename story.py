@@ -9,25 +9,23 @@ from assignment import Assignment
 import random
 
 
-def slow_typing(str):
-    print(str)
-    input()
-
 codecool_bp = CodecoolClass.generate_local()
 codecool_bp.sum_stats("morning")
-
-slow_typing("A typical day @Codecool starts with a mentors' discussion about that week's assignment.")
+input("")
+print("A typical day @Codecool starts with a mentors' discussion about that week's assignment.")
+input("")
 # event mentor discussion
 for i in codecool_bp.mentors:
-    event = Event(-3, "{0} is attending on the meeting. Energy level: ".format(i.full_name))
+    event = Event(random.randint(-3, 4), "{0} is attending the meeting. Energy level has changed by: ".format(i.full_name))
     i.process(event.process_event())
-slow_typing("One of the mentors gets appointed to be responsible for the week's project.")
+input("")
+print("One of the mentors gets appointed to be responsible for the week's project: ")
 # event "This week ..... mentor got appointed. Hooraaay!"
 # appointing mentor of the week
 codecool_bp.appoint_mentor()
 active_mentor = next(i for i in codecool_bp.mentors if i.responsible)
 input("")
-slow_typing('''It's 8.40 and the office is almost empty.
+print('''It's 8.40 and the office is almost empty.
 Oh, wait, I can see someone drinking their morning coffee in the kitchen
 The students start to arrive very very slowly. Soothing music is playing in the background.
 GONG!
@@ -42,7 +40,7 @@ active_project = Assignment("A mentor's life in an OOP way", None, True, active_
 event = Event(-3, "{0} announces the project for the week. Energy level: ".format(active_mentor.nick_name))
 active_mentor.process(event.process_event())
 print("Well, this week's assignment will be: {0}".format(active_project.name))
-slow_typing("Let's see whether our students are able to understand it right away.")
+print("Let's see whether our students are able to understand it right away.")
 
 for i in codecool_bp.students:
     i.understanding_project(active_project.understand_assignment(i))
@@ -55,8 +53,8 @@ for _ in range(3):
     stud.process(event.process_event())
     print(active_project.questions.pop(random.randrange(len(active_project.questions))))
     stud.process(event.process_study())
-slow_typing("Do not worry, those who still do not understand will have a chance to discuss with the mentors after school.")
-slow_typing('''It's noon already! Time surely flies when you are having fun! Let's have lunch, shall we?
+print("Do not worry, those who still do not understand will have a chance to discuss with the mentors after school.")
+print('''It's noon already! Time surely flies when you are having fun! Let's have lunch, shall we?
 It seems that some of the class is not hungry. They can pass time by playing some table football!''')
 
 for _ in range(5):

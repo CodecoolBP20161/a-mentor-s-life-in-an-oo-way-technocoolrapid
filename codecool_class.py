@@ -14,13 +14,8 @@ class CodecoolClass:
 
     @classmethod
     def generate_local(cls):
-<<<<<<< Updated upstream
         students = Student.create_by_csv("data/students.csv")
         mentors = Mentor.create_by_csv("data/mentors.csv")
-=======
-        students = Student.create_by_csv("./data/students.csv")
-        mentors = Mentor.create_by_csv("./data/mentors.csv")
->>>>>>> Stashed changes
         year = 2016
         location = "Budapest"
         local_class = CodecoolClass(location, year, students, mentors)
