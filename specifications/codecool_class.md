@@ -114,7 +114,9 @@ None
 Person drinks coffee if has a critical energy level.
 
 #### Arguments
-
+* ```limit```
+  * data_type: integer
+  * description: energy limit to drink coffe
 
 #### Return value
 None
