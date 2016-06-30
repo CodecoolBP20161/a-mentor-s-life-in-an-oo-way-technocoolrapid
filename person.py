@@ -23,7 +23,7 @@ class Person:
         else:
             stat = self.moral_level
             self.moral_level += args[0]
-        print(args[1] + stat)
+        print(args[1] + str(stat))
 
     @property
     def full_name(self):
