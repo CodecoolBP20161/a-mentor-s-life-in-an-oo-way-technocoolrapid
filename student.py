@@ -22,7 +22,9 @@ class Student(Person):
         self.understood_project = understood
         if self.understood_project:
             self.moral_level += 1
-            print("Student %s understood the project. His/her morale increased by 1." % self.first_name)
+            print("Student {0} understood the project. ".format(self.first_name)
+                  + ("His" if self.gender == "Male" else "Her") + " morale increased by 1.")
         else:
             self.moral_level -= 1
-            print("Student %s did not understand the project. His/her morale decreased by 1." % self.first_name)
+            print("Student {0} did not understand the project. ".format(self.first_name)
+                  + ("His" if self.gender == "Male" else "Her")+ " morale decreased by 1.")
