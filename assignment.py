@@ -43,9 +43,3 @@ class Assignment:
     def understand_assignment(self, student):
         return student.skill_level >= self.difficulty
             # print("{0} has understood the assignment called {1}".format(student.first_name, self.name))
-
-project = Assignment("A mentor's life in an OOP way", student)
-print(project)
-print(project.questions)
-print(project.get_grade())
-print(project.understand_assignment())
