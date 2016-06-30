@@ -14,8 +14,8 @@ class CodecoolClass:
 
     @classmethod
     def generate_local(cls):
-        students = Student.create_by_csv()
-        mentors = Mentor.create_by_csv()
+        students = Student.create_by_csv("data/students.csv")
+        mentors = Mentor.create_by_csv("data/mentors.csv")
         year = 2016
         location = "Budapest"
         local_class = CodecoolClass(location, year, students, mentors)
@@ -42,10 +42,10 @@ class CodecoolClass:
 
     def sum_stats(self, stat_status):  # kérdés hogyan írja a stat_evening stat_morning ot???
 
-        energy = None
-        skill = None
-        moral = None
-        overall = None
+        energy = 0
+        skill = 0
+        moral = 0
+        overall = 0
 
         for mentor in self.mentors:
             energy += mentor.energy_level
