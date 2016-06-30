@@ -109,3 +109,12 @@ Prints the state changes between start and end of the school.
 
 #### Return value
 None
+
+### ```drink_coffee```
+Person drinks coffee if has a critical energy level.
+
+#### Arguments
+
+
+#### Return value
+None
