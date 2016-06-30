@@ -58,7 +58,8 @@ input("")
 for _ in range(3):
     stud = random.choice(codecool_bp.students)
     event = Study(2, "This was indeed a good question. Skill level: ",
-                  -3, "{0} asks THE question bugging him for so long! Energy level: ".format(stud.full_name))
+                  -3, "{0} asks THE question bugging ".format(stud.full_name)
+                  + ("him" if stud.gender == "Male" else "her") + " for so long! Energy level: ")
     stud.process(event.process_event())
     print(active_project.questions.pop(random.randrange(len(active_project.questions))))
     stud.process(event.process_study())
@@ -75,8 +76,9 @@ for pers in random.sample(codecool_bp.students + codecool_bp.mentors, 5):
         event = Athomosphere(3, "Beer is awesome as usual. Morale: ",
                              15, "{0} had some tasty food. Yummy! Energy level: ".format(pers.full_name))
     else:
-        event = Athomosphere(5, "And he/she didn't need to crawl under the table! Morale: ",
-                             -2, "{0} had an intense match at the table. Hooraay! Energy level: ".format(pers.full_name))
+        event = Athomosphere(5, "And " + ("he" if pers.gender == "Male" else "she")
+                             + " didn't need to crawl under the table! Morale: ",
+                             -2, "{0} had an intense match at the table. Hooray! Energy level: ".format(pers.full_name))
     pers.process(event.process_event())
     pers.process(event.process_atmosphere())
     print("\n")
@@ -88,8 +90,8 @@ print("In Codecool we do everything democratically, students and mentors togethe
 input("")
 for stud in random.sample(codecool_bp.students, 4):
     # stud = random.choice(codecool_bp.students)
-    event = Study(3, "This intense brainstorming had good effects on him/her. Skill level: ",
-                  -2, "{0} had an amazing idea for the evaluation criteria. Energy level: "
+    event = Study(3, "This intense brainstorming had good effects on " + ("him." if stud.gender == "Male" else "her.")
+                  + " Skill level: ", -2, "{0} had an amazing idea for the evaluation criteria. Energy level: "
                   .format(stud.full_name))
     stud.process(event.process_event())
     stud.process(event.process_study())
@@ -98,7 +100,7 @@ input("")
 print("It is now time to get some real work done! If all goes well everybody will be happy in the end.")
 input("")
 for i in codecool_bp.students:  # only those students who actually understood the project?
-    event = Study(4, "He/she is getting the hang of it. Skill level: ",
+    event = Study(4, ("He" if i.gender == "Male" else "She") + " is getting the hang of it. Skill level: ",
                   -7, "{0} is working on the assignment. Energy level: ".format(i.full_name))
     i.process(event.process_event())
     i.process(event.process_study())
