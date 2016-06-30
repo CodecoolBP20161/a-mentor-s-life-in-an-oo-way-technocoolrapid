@@ -109,12 +109,3 @@ Prints the state changes between start and end of the school.
 
 #### Return value
 None
-
-### ```attendance_check```
-Checks the students if they are late and modifies the mentor's morale
-
-#### Arguments
-None
-
-#### Return value
-list of integer, string, string
