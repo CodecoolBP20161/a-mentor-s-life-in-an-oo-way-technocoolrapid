@@ -27,4 +27,4 @@ class Student(Person):
         else:
             self.moral_level -= 1
             print("Student {0} did not understand the project. ".format(self.first_name)
-                  + ("His" if self.gender == "Male" else "Her")+ " morale decreased by 1.")
+                  + ("His" if self.gender == "Male" else "Her") + " morale decreased by 1.")

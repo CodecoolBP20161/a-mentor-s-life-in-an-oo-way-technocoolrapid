@@ -76,13 +76,16 @@ class CodecoolClass:
         return overall
 
     def report_day(self, stat_morning, stat_evening):
-        changes =  stat_evening - stat_morning
+        changes = stat_evening - stat_morning
         if changes > 0:
-            print("Codecool overall status has changed by the day {0} points.Let's go to terrace opening party!!!".format(changes))
+            print("Codecool overall status has increased by {0} points. ".format(changes)
+                  + "Let's go to the terrace opening party!!!")
         else:
-            print("Codecool overall status has changed by the day {0} points.Let's do more harder. 'Gyerünk rakjuk meg'".format(changes))
+            print("Codecool overall status has decreased by {0} points. ".format(changes)
+                  + "Let's do it better tomorrow! 'Gyerünk rakjuk meg'")
 
     def drink_coffee(self, limit):
         for person in self.students+self.mentors:
             if person.energy_level < limit:
-                person.process([10, "{0}'s energy level is critical.Let's drink Coffee. Energy level:   ".format(person.full_name), "energy_level"])
+                person.process([10, "{0}'s energy level is critical. Let's drink coffee! ".format(person.full_name)
+                                + "Energy level:   ", "energy_level"])

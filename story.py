@@ -40,7 +40,8 @@ event = Athomosphere(-2, "Oh, no, {0} students are late. Morale: ".format(late),
                      -3, "{0} carries out roll attendance. Energy level: ".format(active_mentor.nick_name))
 active_mentor.process(event.process_event())
 active_mentor.process(event.process_atmosphere())
-active_project = Assignment("A mentor's life in an OOP way", None, True, active_mentor)  # args: name, student, is_active, mentor
+# for Assignment --- args: name, student, is_active, mentor
+active_project = Assignment("A mentor's life in an OOP way", None, True, active_mentor)
 event = Event(-3, "{0} announces the project for the week. Energy level: ".format(active_mentor.nick_name))
 active_mentor.process(event.process_event())
 codecool_bp.drink_coffee(50)
@@ -121,11 +122,11 @@ mentor = random.choice(inactive_mentors)
 if len(assignments) < 17:
     event = Athomosphere(3, "This is not as much as I thought, hooray! Morale:  ",
                          -2, "So I have {0} assignments to grade. Let's get started! - says {1}. Energy level: "
-                       .format(len(assignments), mentor.nick_name))
+                         .format(len(assignments), mentor.nick_name))
 else:
     event = Athomosphere(-3, "Oh god, this is a shitload of assignments to grade... Morale: ",
                          -3, "So I have {0} assignments to grade. Let's get started! - says {1}. Energy level: "
-                       .format(len(assignments), mentor.nick_name))
+                         .format(len(assignments), mentor.nick_name))
 
 mentor.process(event.process_event())
 mentor.process(event.process_atmosphere())
