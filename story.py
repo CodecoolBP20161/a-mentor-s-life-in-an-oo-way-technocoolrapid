@@ -18,6 +18,7 @@ input("")
 for i in codecool_bp.mentors:
     event = Event(random.randint(-3, 4), "{0} is attending the meeting. Energy level: ".format(i.full_name))
     i.process(event.process_event())
+codecool_bp.drink_coffee(50)
 input("")
 print("One of the mentors gets appointed to be responsible for the week's project: ")
 # event "This week ..... mentor got appointed. Hooraaay!"
@@ -42,6 +43,7 @@ active_mentor.process(event.process_atmosphere())
 active_project = Assignment("A mentor's life in an OOP way", None, True, active_mentor)  # args: name, student, is_active, mentor
 event = Event(-3, "{0} announces the project for the week. Energy level: ".format(active_mentor.nick_name))
 active_mentor.process(event.process_event())
+codecool_bp.drink_coffee(50)
 input("")
 print('"Well, this week\'s assignment will be: {0}"'.format(active_project.name))
 input("")
@@ -49,6 +51,7 @@ print("Let's see whether our students are able to understand it right away.")
 input("")
 for i in codecool_bp.students:
     i.understanding_project(active_project.understand_assignment(i))
+codecool_bp.drink_coffee(50)
 input("")
 print("If you have any questions regarding the project ask away! - says {0}".format(active_mentor.nick_name))
 input("")
@@ -60,6 +63,7 @@ for _ in range(3):
     print(active_project.questions.pop(random.randrange(len(active_project.questions))))
     stud.process(event.process_study())
     print("\n")
+codecool_bp.drink_coffee(50)
 input("")
 print("Do not worry, those who still do not understand will have a chance to discuss with the mentors after school.")
 input("")
@@ -76,6 +80,7 @@ for pers in random.sample(codecool_bp.students + codecool_bp.mentors, 5):
     pers.process(event.process_event())
     pers.process(event.process_atmosphere())
     print("\n")
+codecool_bp.drink_coffee(50)
 input("")
 print("Lunch break is over, let's get down to business again!")
 print("Next on the schedule is discussing the evaluation criteria for the project.")
@@ -88,6 +93,7 @@ for stud in random.sample(codecool_bp.students, 4):
                   .format(stud.full_name))
     stud.process(event.process_event())
     stud.process(event.process_study())
+codecool_bp.drink_coffee(50)
 input("")
 print("It is now time to get some real work done! If all goes well everybody will be happy in the end.")
 input("")
@@ -108,7 +114,7 @@ for j in ["100doors", "phone_numbers", "car_dealer"]:
         while stud is None or stud in [i.student for i in assignments if i.name == j]:
             stud = random.choice(codecool_bp.students)
         assignments.append(Assignment(j, stud, random.choice(inactive_mentors)))
-
+codecool_bp.drink_coffee(40)
 mentor = random.choice(inactive_mentors)
 if len(assignments) < 17:
     event = Athomosphere(3, "This is not as much as I thought, hooray! Morale:  ",
@@ -121,7 +127,7 @@ else:
 
 mentor.process(event.process_event())
 mentor.process(event.process_atmosphere())
-
+codecool_bp.drink_coffee(40)
 input("")
 for i in assignments:
     event = Study(3, "At least this way we can practice Python as well. Skill level: ",
@@ -131,6 +137,7 @@ for i in assignments:
 
 
 # script mentors working on the assignment
+codecool_bp.drink_coffee(40)
 input("")
 print("The mentors noticed that some students still need some extra help with understanding the material.")
 print("They invite those students for private mentoring. No student left behind!")
