@@ -1,10 +1,6 @@
 from person import Person
 from student import Student
 from random import randint
-import colorama
-from colorama import Fore, Back, Style
-
-colorama.init()
 
 class Assignment:
     def __init__(self, name, student, is_active=False, mentor=None, grade=None):
@@ -39,7 +35,7 @@ class Assignment:
             self.grade = 100
             morale_of_mentor = 5
             reaction = "Excellent assignment, keep on rocking! The morale level of mentor increased by 5"
-        print(Fore.RED + "{0}'s assignment, {1} has been graded: {2}%".format(self.student.first_name, self.name, self.grade) + Style.RESET_ALL)
+        print("{0}'s assignment, {1} has been graded: {2}%".format(self.student.first_name, self.name, self.grade) )
         return [morale_of_mentor, reaction]
 
         # return formatted string of the student's name, the name of the assignment and the grade

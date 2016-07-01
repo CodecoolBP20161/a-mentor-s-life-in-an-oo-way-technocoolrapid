@@ -2,10 +2,6 @@ from mentor import Mentor
 from student import Student
 from person import Person
 import random
-import colorama
-from colorama import Fore, Back, Style
-
-colorama.init()
 
 class CodecoolClass:
     def __init__(self, location, year, students, mentors):
@@ -71,21 +67,21 @@ class CodecoolClass:
         if stat_status == "evening":
             self.stat_evening = overall
 
-        print(Fore.LIGHTYELLOW_EX + """Codecool class state at the {0} is : \n
+        print("""Codecool class state at the {0} is : \n
               average energy level: {1}
               average skill level: {2}
               average moral level: {3}
-              overall class states: {4}""".format(stat_status, energy, skill, moral, overall) + Style.RESET_ALL)
+              overall class states: {4}""".format(stat_status, energy, skill, moral, overall) )
         return overall
 
     def report_day(self, stat_morning, stat_evening):
         changes = stat_evening - stat_morning
         if changes > 0:
-            print(Fore.GREEN + "Codecool overall status has increased by {0} points. ".format(changes)
-                  + "Let's go to the terrace opening party!!!" + Style.RESET_ALL)
+            print("Codecool overall status has increased by {0} points. ".format(changes)
+                  + "Let's go to the terrace opening party!!!")
         else:
-            print(Fore.RED + "Codecool overall status has decreased by {0} points. ".format(changes)
-                  + "Let's do it better tomorrow! 'Gyerünk rakjuk meg'" + Style.RESET_ALL)
+            print( "Codecool overall status has decreased by {0} points. ".format(changes)
+                  + "Let's do it better tomorrow! 'Gyerünk rakjuk meg'" )
 
     def drink_coffee(self, limit):
         for person in self.students+self.mentors:

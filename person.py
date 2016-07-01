@@ -1,8 +1,4 @@
 import random
-import colorama
-from colorama import Fore, Back, Style
-
-colorama.init()
 
 class Person:
 
@@ -26,7 +22,7 @@ class Person:
         else:
             stat = self.moral_level
             self.moral_level += args[0]
-        print(Fore.LIGHTCYAN_EX + args[1] + str(stat) + Style.RESET_ALL)
+        print(args[1] + str(stat) )
 
     @property
     def full_name(self):
