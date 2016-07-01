@@ -7,12 +7,16 @@ from study import Study
 from atmosphere import Athomosphere
 from assignment import Assignment
 import random
+import colorama
+from colorama import Fore, Back, Style
+
+colorama.init()
 
 
 codecool_bp = CodecoolClass.generate_local()
 codecool_bp.sum_stats("morning")
 input("")
-print("A typical day @Codecool starts with a mentors' discussion about that week's assignment.")
+print(Fore.RED + "A typical day @Codecool starts with a mentors' discussion about that week's assignment." + Style.RESET_ALL)
 input("")
 # event mentor discussion
 for i in codecool_bp.mentors:

@@ -1,6 +1,10 @@
 from person import Person
 import random
 import csv
+import colorama
+from colorama import Fore, Back, Style
+
+colorama.init()
 
 
 class Mentor(Person):
@@ -24,9 +28,9 @@ class Mentor(Person):
         print("{0} {1} is responsible for the project.".format(self.first_name, self.last_name))
         if random.randint(0, 1000) % 2 == 0:
             self.moral_level += 2
-            print("This is going to be a great project, let's do it!")
-            print("The morale level of {0} {1} has increased by 2.".format(self.first_name, self.last_name))
+            print(Fore.BLUE + "This is going to be a great project, let's do it!")
+            print("The morale level of {0} {1} has increased by 2.".format(self.first_name, self.last_name) + Style.RESET_ALL)
         else:
             self.moral_level -= 2
-            print('"Ehh, one more thing to do..." - cried {0}'.format(self.nick_name))
-            print("The morale level of {0} {1} has decreased by 2.".format(self.first_name, self.last_name))
+            print(Fore.BLUE + '"Ehh, one more thing to do..." - cried {0}'.format(self.nick_name))
+            print("The morale level of {0} {1} has decreased by 2.".format(self.first_name, self.last_name) + Style.RESET_ALL)
