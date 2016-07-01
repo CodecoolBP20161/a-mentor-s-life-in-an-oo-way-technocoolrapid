@@ -1,6 +1,9 @@
 from person import Person
 import random
+import colorama
+from colorama import Fore, Back, Style
 
+colorama.init()
 
 class Student(Person):
     def __init__(self, *args, **kwargs):
@@ -22,9 +25,9 @@ class Student(Person):
         self.understood_project = understood
         if self.understood_project:
             self.moral_level += 1
-            print("Student {0} understood the project. ".format(self.first_name)
-                  + ("His" if self.gender == "Male" else "Her") + " morale increased by 1.")
+            print(Fore.LIGHTGREEN_EX +  "Student {0} understood the project. ".format(self.first_name)
+                  + ("His" if self.gender == "Male" else "Her") + " morale increased by 1." + Style.RESET_ALL)
         else:
             self.moral_level -= 1
-            print("Student {0} did not understand the project. ".format(self.first_name)
-                  + ("His" if self.gender == "Male" else "Her") + " morale decreased by 1.")
+            print(Fore.LIGHTGREEN_EX + "Student {0} did not understand the project. ".format(self.first_name)
+                  + ("His" if self.gender == "Male" else "Her") + " morale decreased by 1." + Style.RESET_ALL)
