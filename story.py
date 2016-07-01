@@ -8,7 +8,8 @@ from atmosphere import Athomosphere
 from assignment import Assignment
 import random
 
-
+coffee_input = input('"Are we out of coffee?" - giving a meany look to Miki: ')
+CodecoolClass.coffee_status = True if coffee_input == "y" else False
 codecool_bp = CodecoolClass.generate_local()
 codecool_bp.sum_stats("morning")
 input("")
@@ -30,20 +31,21 @@ print('''It's 8.40 and the office is almost empty.
 Oh, wait, I can see someone drinking their morning coffee in the kitchen.
 The students start to arrive very very slowly. Soothing music is playing in the background.''')
 input("")
-print("GONG!")
+print("9 o'clock - GONG!")
 input("")
 print("Who's here already? Let's check the attendance!")
 input("")
 # script attendance check (late students)
 late = len([i for i in codecool_bp.students if i.late])
-event = Athomosphere(-2, "Oh, no, {0} students are late. Morale: ".format(late),
-                     -3, "{0} carries out roll attendance. Energy level: ".format(active_mentor.nick_name))
+event = Athomosphere(-2, '"Oh, no, {0} students are late. It makes me really sad." Morale: '.format(late),
+                     -3, "{0} carries out roll call attendance. His energy level is: ".format(active_mentor.nick_name))
 active_mentor.process(event.process_event())
 active_mentor.process(event.process_atmosphere())
 # for Assignment --- args: name, student, is_active, mentor
-active_project = Assignment("A mentor's life in an OOP way", None, True, active_mentor)
+active_project = Assignment("A mentor's life in an OO way", None, True, active_mentor)
 event = Event(-3, "{0} announces the project for the week. Energy level: ".format(active_mentor.nick_name))
 active_mentor.process(event.process_event())
+input("")
 codecool_bp.drink_coffee(50)
 input("")
 print('"Well, this week\'s assignment will be: {0}"'.format(active_project.name))
@@ -52,19 +54,21 @@ print("Let's see whether our students are able to understand it right away.")
 input("")
 for i in codecool_bp.students:
     i.understanding_project(active_project.understand_assignment(i))
+input("")
 codecool_bp.drink_coffee(50)
 input("")
-print("If you have any questions regarding the project ask away! - says {0}".format(active_mentor.nick_name))
+print("If you have any questions regarding the project, ask away! - says {0}.".format(active_mentor.nick_name))
 input("")
 for _ in range(3):
     stud = random.choice(codecool_bp.students)
     event = Study(2, "This was indeed a good question. Skill level: ",
-                  -3, "{0} asks THE question bugging ".format(stud.full_name)
-                  + ("him" if stud.gender == "Male" else "her") + " for so long! Energy level: ")
+                  -3, "{0} asks THE question bugging ".format(stud.full_name) +
+                  ("him" if stud.gender == "Male" else "her") + " for so long! Energy level: ")
     stud.process(event.process_event())
     print(active_project.questions.pop(random.randrange(len(active_project.questions))))
     stud.process(event.process_study())
     print("\n")
+input("")
 codecool_bp.drink_coffee(50)
 input("")
 print("Do not worry, those who still do not understand will have a chance to discuss with the mentors after school.")
@@ -74,15 +78,16 @@ It seems that some of the class is not hungry. They can pass time by playing som
 input("")
 for pers in random.sample(codecool_bp.students + codecool_bp.mentors, 5):
     if pers.hungry:
-        event = Athomosphere(3, "Beer is awesome as usual. Morale: ",
+        event = Athomosphere(3, "Beer is osom as usual. Morale: ",
                              15, "{0} had some tasty food. Yummy! Energy level: ".format(pers.full_name))
     else:
-        event = Athomosphere(5, "And " + ("he" if pers.gender == "Male" else "she")
-                             + " didn't need to crawl under the table! Morale: ",
+        event = Athomosphere(5, "And " + ("he" if pers.gender == "Male" else "she") +
+                             " didn't need to crawl under the table! Morale: ",
                              -2, "{0} had an intense match at the table. Hooray! Energy level: ".format(pers.full_name))
     pers.process(event.process_event())
     pers.process(event.process_atmosphere())
     print("\n")
+input("")
 codecool_bp.drink_coffee(50)
 input("")
 print("Lunch break is over, let's get down to business again!")
@@ -91,8 +96,8 @@ print("In Codecool we do everything democratically, students and mentors togethe
 input("")
 for stud in random.sample(codecool_bp.students, 4):
     # stud = random.choice(codecool_bp.students)
-    event = Study(3, "This intense brainstorming had good effects on " + ("him." if stud.gender == "Male" else "her.")
-                  + " Skill level: ", -2, "{0} had an amazing idea for the evaluation criteria. Energy level: "
+    event = Study(3, "This intense brainstorming had good effects on " + ("him." if stud.gender == "Male" else "her.") +
+                  " Skill level: ", -2, "{0} had an amazing idea for the evaluation criteria. Energy level: "
                   .format(stud.full_name))
     stud.process(event.process_event())
     stud.process(event.process_study())
@@ -149,7 +154,7 @@ input("")
 for stud in codecool_bp.students:
     if stud.understood_project is not True:
         mentor = random.choice(codecool_bp.mentors)
-        private_mentoring = Study(-2, "I learnt so much, it really worth the effort. Skill level: ",
+        private_mentoring = Study(-2, '"I learnt so much, it really worth the effort." Skill level: ',
                                   4, "\n{0} had a private mentoring session with {1}. Energy level: "
                                   .format(stud.full_name, mentor.nick_name))
         stud.understood_project = True

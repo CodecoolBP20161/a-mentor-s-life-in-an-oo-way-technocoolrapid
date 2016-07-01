@@ -4,6 +4,8 @@ from person import Person
 import random
 
 class CodecoolClass:
+    coffee_status = False
+
     def __init__(self, location, year, students, mentors):
         self.location = location
         self.year = year
@@ -35,13 +37,12 @@ class CodecoolClass:
         appointed_mentor = random.choice(self.mentors)
         appointed_mentor.appoint_mentor()
 
-    def export_to_csv(self):  # append vagy write a jobb megoldás
+    def export_to_csv(self):
         with open("data/mentors.csv", "a") as wm, open("data/students.csv", "a") as ws:
 
             pass
 
-    def sum_stats(self, stat_status):  # kérdés hogyan írja a stat_evening stat_morning ot???
-
+    def sum_stats(self, stat_status):
         energy = 0
         skill = 0
         moral = 0
@@ -67,24 +68,25 @@ class CodecoolClass:
         if stat_status == "evening":
             self.stat_evening = overall
 
-        print("""Codecool class state at the {0} is : \n
-              average energy level: {1}
-              average skill level: {2}
-              average moral level: {3}
-              overall class states: {4}""".format(stat_status, energy, skill, moral, overall) )
+        print("""Codecool class state at the {0} is: \n
+              Average energy level: {1}
+              Average skill level: {2}
+              Average moral level: {3}
+              Overall class status: {4}""".format(stat_status, energy, skill, moral, overall))
         return overall
 
     def report_day(self, stat_morning, stat_evening):
         changes = stat_evening - stat_morning
         if changes > 0:
-            print("Codecool overall status has increased by {0} points. ".format(changes)
-                  + "Let's go to the terrace opening party!!!")
+            print("\nCodecool overall status has increased by {0} points.".format(changes) +
+                  "\nLet's go to the terrace opening party!!!")
         else:
-            print( "Codecool overall status has decreased by {0} points. ".format(changes)
-                  + "Let's do it better tomorrow! 'Gyerünk rakjuk meg'" )
+            print("\nCodecool overall status has decreased by {0} points. ".format(abs(changes)) +
+                  "\nLet's do it better tomorrow! 'Gyerünk rakjuk meg!'")
 
     def drink_coffee(self, limit):
-        for person in self.students+self.mentors:
-            if person.energy_level < limit:
-                person.process([10, "{0}'s energy level is critical. Let's drink coffee! ".format(person.full_name)
-                                + "Energy level:   ", "energy_level"])
+        if CodecoolClass.coffee_status:
+            for person in self.students+self.mentors:
+                if person.energy_level < limit:
+                    person.process([10, "{0}'s energy level is critical. Let's drink coffee! ".format(person.first_name) +
+                                    "Energy level: ", "energy_level"])

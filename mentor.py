@@ -2,6 +2,7 @@ from person import Person
 import random
 import csv
 
+
 class Mentor(Person):
     def __init__(self, nick_name, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -23,9 +24,9 @@ class Mentor(Person):
         print("{0} {1} is responsible for the project.".format(self.first_name, self.last_name))
         if random.randint(0, 1000) % 2 == 0:
             self.moral_level += 2
-            print("This is going to be a great project, let's do it!")
-            print("The morale level of {0} {1} has increased by 2.".format(self.first_name, self.last_name) )
+            print('"This is going to be a great project, let\'s do it!"')
+            print("The morale level of {0} has increased by 2.".format(self.nick_name))
         else:
             self.moral_level -= 2
             print('"Ehh, one more thing to do..." - cried {0}'.format(self.nick_name))
-            print("The morale level of {0} {1} has decreased by 2.".format(self.first_name, self.last_name))
+            print("The morale level of {0} has decreased by 2.".format(self.nick_name))
