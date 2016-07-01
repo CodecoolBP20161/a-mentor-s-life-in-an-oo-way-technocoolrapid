@@ -8,7 +8,7 @@ from atmosphere import Athomosphere
 from assignment import Assignment
 import random
 
-coffee_input = input('"Are we out of coffee?" - giving a meany look to Miki: ')
+coffee_input = input('"Are we out of coffee?" - giving a meany look to Humen: ')
 CodecoolClass.coffee_status = True if coffee_input == "y" else False
 codecool_bp = CodecoolClass.generate_local()
 codecool_bp.sum_stats("morning")
